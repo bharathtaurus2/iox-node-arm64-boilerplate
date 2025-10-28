@@ -1,0 +1,28 @@
+descriptor-schema-version: "2.7"
+info:
+  name: sample-node-arm64
+  version: "1.0"
+app:
+  cpuarch: arm64
+  env:
+    NODE_VERSION: 20.19.5
+    PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+    YARN_VERSION: 1.22.22
+  resources:
+    cpu: "400"
+    memory: "128"
+    network:
+    - interface-name: eth0
+      ports:
+        tcp:
+        - "3000"
+    profile: custom
+  startup:
+    args:
+    - node
+    - index.js
+    rootfs: sample-node-arm64.tar
+    target:
+    - docker-entrypoint.sh
+    workdir: /usr/src/app
+  type: docker

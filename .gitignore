@@ -1,0 +1,16 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log
+
+# macOS system files
+.DS_Store
+
+# IOx packaging artifacts
+*.app
+*.tar
+artifacts.tar.gz
+iox-output/
+
+# Logs and temp files
+*.log
+*.tmp
